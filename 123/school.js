@@ -28,7 +28,9 @@ db.open(function(err, db) {
         console.log("We are connected");
     }
 });
-
+ var db1 = db.collection('primaryschool');
+    var db2 = db.collection('secondaryschool');
+    var db3 = db.collection('wholeschool');
 //var rrr=db.collection("primaryschool");
 var school = function(Organisation , Name, Address1, Address2, Address3, Address4, ITMEast, ITMNorth){
    // this._id = (_id) ? _id : 0;
@@ -61,38 +63,29 @@ app.get('/secondary',function(req,res) {
         });
     });
 });
-app.get('/primary/Name/:Name',function(req,res){
+app.get('/wholeschool/Name/:Name',function(req,res){
     var w=req.params.Name;
-    console.log(w);
+    
+        db3.find({Name:w}).toArray(function (err, bar) {
+            res.json(bar);
+        });
+//    res.json(db1[req.params.ITMEast]);
+});
+app.get('/primary/ITMEast/:ITMEast',function(req,res){
+    var i=req.params.ITMEast;
     db.collection('primaryschool', function (err, collection) {
-        collection.find({Name:w}).toArray(function (err, bar) {
+        collection.find({ITMEast:i}).toArray(function (err, bar) {
             res.json(bar);
         });
     });
 
 //    res.json(db1[req.params.ITMEast]);
 });
-app.get('/primary/ITMEast/:ITMEast',function(req,res){
-    var w=req.params.ITMEast;
-    console.log(w);
-    db.collection('primaryschool', function (err, collection) {
-        collection.find({ITMEast:w}).toArray(function (err, bars) {
-            res.json(bars);
-        });
-    });
-
-//    res.json(db1[req.params.ITMEast]);
-});
 app.get('/allschool',function(req,res) {
-    var db1 = db.collection('primaryschool');
-    var db2 = db.collection('secondaryschool');
-    var db3 = db.collection('wholeschool');
-	
-    for (var i=0;i<db2.length;i++) {
-        db.db3.insert(db2[i]);
-    }
-    db3.find().toArray(function (err, aa) {
-        res.json(aa);
+ db.collection('wholeschool', function (err, collection) {
+        collection.find().toArray(function (err, bar) {
+            res.json(bar);
+        });
     });
 });
 
@@ -104,19 +97,66 @@ app.post('/POST',function (req, res){
 			})
 		});
 
+app.put('/PUT',function (req, res){
+		var school1=new school(req.body.Organisation,req.body.Name,req.body.Address1,req.body.Address2,req.body.Address3,req.body.Address4,req.body.ITMEast,req.body.ITMNorth);
+		console.log(school1);
+		
+		db.collection("wholeschool",function(err,collection){
+			if(req.body.Name!=collection.Name){
+				collection.save(school1);
+			}else{
+				console.log(err);
+			}
+			})
+		});
 
-app.post('/school',function (req, res){
-		var schoolId =  (req.body._id) ? req.body._id : 0;
-			rrr.find({ITMEast:schoolId}).toArray(function(err, row) {
+app.delete('/DELETE',
+	function (req, res){
+		var Name11 = req.body.Name;
+		
+			db3.remove({Name:Name11});
+				
+			
 					
+			});
+			
+app.post('/school',function (req, res){
+	
+		var schoolName =  (req.body.Name) ? req.body.Name : null;
+		console.log(schoolName+"------");
+		 
+				db3.find({Name:schoolName}).toArray(function (err, row) {
+				
+				console.log(row[0].Organisation);
+					console.log("-----------hereS----------");
+					var school11  = new school(
+									row[0].Organisation, row[0].Name, row[0].Address1, row[0].Address2, row[0].Address3, row[0].Address4, row[0].ITMEast, row[0].ITMNorth);
+				
 					if (typeof(row) == "object"){						
-						return res.json(school);
+						return res.json(school11);
 					}						
 					else{
 						return res.json("Error");
 					}
+				
+			});
+
 		});		
-	});
+		
+app.get('/GET/:schoolName',
+	function (req, res){
+		var sName = (req.params.schoolName) ? req.params.schoolName :  req.body.Name;
+	
+		
+		db3.find({Name:sName}).toArray(function(err, row) {
+					var school11  = new school(
+									 row._id,row.Organisation, row.Name, row.Address1, row.Address2, row.Address3, row.Address4, row.ITMEast, row.ITMNorth);
+					console.log(school11);									
+					res.json(school11);			
+			  });
+			
+		});		
+	
 app.use(express.static(__dirname + '/public'));
 // Start the server.
 var server = app.listen(3000);

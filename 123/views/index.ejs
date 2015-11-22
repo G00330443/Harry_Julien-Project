@@ -1,43 +1,43 @@
 <!DOCTYPE html >
 <html>
-	<head><title>R: Prices of 50,000 round cut diamonds</title>
+	<head><title>Dublin SchoolLocation</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<% //<link rel="stylesheet" type="text/css" href="R.css"> %>
-
-	
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link href="/css/style.css" rel="stylesheet" type="text/css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	
-	<script src="routes/index"></script>
-	
-	<% // D3 module and my js drawings %>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
-	
-	//<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	<script src="/routes/index.js"></script>
+	
+<h1>Dublin SchoolLocation</h1>
+<br />
+	<p>There have Links to Check Primaryschool, Secondaryschool and schools</p>
+	<a href="http://127.0.0.1:3000/primary">primarySchool</a>&nbsp;
+  <a href="http://127.0.0.1:3000/secondary">secondarySchool</a>&nbsp;
+  <a href="http://127.0.0.1:3000/allschool">allSchool</a>
+	
 		<div class="container">
 			<div class="container round-container align-left">
 				<div class="">
-					<h3>Display diamond</h3>
-					<p>Diamond id <input id="showDiamondId" type="text"></p>
-					<input id="showButton" class="btn btn-default btn-md" type="button" value="Show">
+					<h3>Display SchoolLocation</h3>
+					<p>school Name <input id="showName" type="text"></p>
+					<input id="showButton" class="btn btn-primary" type="button" value="Show">
 				</div>
 			</div>
-			
+			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
+		
 			<div class="container round-container align-right">
 				<div class="">
-					<h3>Delete diamond from db</h3>
-					<p>Diamond id <input id="deleteDiamondId" type="text"></p>
-					<input id="deleteButton" class="btn btn-default btn-md" type="button" value="Delete">
+					<h3>Delete SchoolLocation from db</h3>
+					<p>School Name <input id="deleteSchool" type="text"></p>
+					<input id="deleteButton" class="btn btn-primary" type="button" value="Delete">
 				</div>
 			</div>
+			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
 				</head>
 				
 				
@@ -47,141 +47,132 @@
 			
 			<div class="container round-container align-left">
 				
-					<h3>Insert diamond into db</h3>
+					<h3>Insert SchoolLocation into db</h3>
 				
 				<div class="container">				
-					<div class="row">
-						<div class="haha">_id</div>
-						<div class="haha"><input id="postid" type="text" name="_id" value="0.24"></div>
-					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Organisation</div>
-						<div class="haha"><input id="postorg" type="text" name="Organisation" value="Very Good"></div>
+						<div class="haha"><input id="postorg" type="text" name="Organisation" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Name</div>
-						<div class="haha"><input id="postname" type="text" name="Name" value="Y"></div>
+						<div class="haha"><input id="postname" type="text" name="Name" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address1</div>
-						<div class="haha"><input id="postadd1" type="text" name="Address1" value="SI1"></div>
+						<div class="haha"><input id="postadd1" type="text" name="Address1" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address2</div>
-						<div class="haha"><input id="postadd2" type="text" name="Address2" value="59.8"></div>
+						<div class="haha"><input id="postadd2" type="text" name="Address2" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address3</div>
-						<div class="haha"><input id="postadd3" type="text" name="Address3" value="55"></div>
+						<div class="haha"><input id="postadd3" type="text" name="Address3" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address4</div>
-						<div class="haha"><input id="postadd4" type="text" name="Address4" value="327"></div>
+						<div class="haha"><input id="postadd4" type="text" name="Address4" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">ITMEast</div>
-						<div class="haha"><input id="posteast" type="text" name="ITMEast" value="4.2"></div>
+						<div class="haha"><input id="posteast" type="text" name="ITMEast" value="0.000"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">ITMNorth</div>
-						<div class="haha"><input id="postnorth" type="text" name="ITMNorth" value="4.35"></div>
+						<div class="haha"><input id="postnorth" type="text" name="ITMNorth" value="0.000"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha"></div>
-						<div class="haha"><input id="postInsert" class="btn btn-default btn-md" type="button" value="Insert"></div>
+						<div class="haha"><input id="postInsert" class="btn btn-danger" type="button" value="Insert"></div>
 					</div>
 				</div>
 			</div>
 			
 			<div class="container round-container align-right">
 				
-					<h3>Update diamond in db</h3>
+					<h3>Update SchoolLocation in db</h3>
 					
 					<div class="container">				
-					<div class="row">
-						<div class="haha">_id</div>
-						<div class="haha"><input id="putid" type="text" name="_id" value="0.24"></div>
-					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Organisation</div>
-						<div class="haha"><input id="putorg" type="text" name="Organisation" value="Very Good"></div>
+						<div class="haha"><input id="putorg" type="text" name="Organisation" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Name</div>
-						<div class="haha"><input id="putname" type="text" name="Name" value="Y"></div>
+						<div class="haha"><input id="putname" type="text" name="Name" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address1</div>
-						<div class="haha"><input id="putadd1" type="text" name="Address1" value="SI1"></div>
+						<div class="haha"><input id="putadd1" type="text" name="Address1" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address2</div>
-						<div class="haha"><input id="putadd2" type="text" name="Address2" value="59.8"></div>
+						<div class="haha"><input id="putadd2" type="text" name="Address2" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address3</div>
-						<div class="haha"><input id="putadd3" type="text" name="Address3" value="55"></div>
+						<div class="haha"><input id="putadd3" type="text" name="Address3" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">Address4</div>
-						<div class="haha"><input id="putadd4" type="text" name="Address4" value="327"></div>
+						<div class="haha"><input id="putadd4" type="text" name="Address4" value="null"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">ITMEast</div>
-						<div class="haha"><input id="puteast" type="text" name="ITMEast" value="4.2"></div>
+						<div class="haha"><input id="puteast" type="text" name="ITMEast" value="0.000""></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha">ITMNorth</div>
-						<div class="haha"><input id="putnorth" type="text" name="ITMNorth" value="4.35"></div>
+						<div class="haha"><input id="putnorth" type="text" name="ITMNorth" value="0.000"></div>
 					</div>
 					
-					<div class="row">
+					<div class="item">
 						<div class="haha"></div>
-						<div class="haha"><input id="putUpdate" class="btn btn-default btn-md" type="button" value="update"></div>
+						<div class="haha"><input id="putUpdate" class="btn btn-danger" type="button" value="update"></div>
 					</div>
 				</div>
 			</div>
 
 	
-	<div id="dialog" title="Diamond">
-		<div id="dialog-text" class="align-left"></div>
-		<div id="dialog-d3" class="align-right">
-			<% // <div id="Stats-output"></div> %>
+	<div id="dialog" title="SchoolLocation">
+		<div id="dialog-text" class="align-center"></div>
 		</div>
 	</div>
 	<script type="text/javascript">
+	$( "#dialog" ).dialog({ autoOpen: false,resizable: false, modal: true, width:'500px', });
 		$("#showButton").click(function(event){
 		
 			$.ajax({
 				url: '/school',
 				type: 'POST',
-				data: 'ITMEast=' + $("#showDiamondId").val(),
+				data: 'Name=' + $("#showName").val(),
 				success: function(data) {
+				
 					var msg = "";
 					if (data == "Error"){
 						msg = "This record doesn't exists...";
 						alert(msg);	
 					}						
 					else {
-						msg = 	"_id:" + data._id + "<br/>"
-								+ "Organisation : " + data.Organisation + "<br/>"
+						msg = 	"Organisation : " + data.Organisation + "<br/>"
 								+ "Name : " + data.Name + "<br/>"
 								+ "Address1 : " + data.Address1 + "<br/>"
 								+ "Address2 : " + data.Address2 + "<br/>"
@@ -189,6 +180,7 @@
 								+ "Address4 : " + data.Address4 + "<br/>"
 								+ "ITMEast: " + data.ITMEast + "<br/>"
 								+ " ITMNorth: " + data.ITMNorth + "<br/>";
+						
 					$("#dialog-text").html(msg);
 					$("#dialog").dialog("open");
 					}
@@ -222,11 +214,62 @@
 								+ "Address4 : " + data.Address4 + "<br/>"
 								+ "ITMEast : " + data.ITMEast+ "<br/>"
 								+ "ITMNorth : " + data.ITMNorth + "<br/>";
-								console.log(msg);
-								
+					$("#dialog-text").html(msg);
+					$("#dialog").dialog("open");
 			}
 		});
 	});
+	
+	
+	$("#putUpdate").click(function(event){
+		$.ajax({
+			url: '/PUT',
+			type: 'PUT',
+			data: 	
+					'Organisation=' + $("#putorg").val()
+					+ '&Name=' + $("#putname").val()
+					+ '&Address1=' + $("#putadd1").val()
+					+ '&Address2=' + $("#putadd2").val()
+					+ '&Address3=' + $("#putadd3").val()
+					+ '&Address4=' + $("#putadd4").val()
+					+ '&ITMEast=' + $("#puteast").val()
+					+ '&ITMNorth=' + $("#putnorth").val()
+			,success: function(data) {
+					var msg = 	"<strong>Diamond with id =" + data.id + "</strong><br/>"
+									+ "Organisation : " + data.Organisation + "<br/>"
+								+ "Name : " + data.Name + "<br/>"
+								+ " Address1 : " + data.Address1 + "<br/>"
+								+ "Address2 : " + data.Address2 + "<br/>"
+								+ "Address3 : " + data.Address3 + "<br/>"
+								+ "Address4 : " + data.Address4 + "<br/>"
+								+ "ITMEast : " + data.ITMEast+ "<br/>"
+								+ "ITMNorth : " + data.ITMNorth + "<br/>";
+			}
+		});
+	});
+	
+	$("#deleteButton").click(function(event){
+			$.ajax({
+				url: '/DELETE',
+				type: 'DELETE',
+				data: 'Name=' + $("#deleteSchool").val(),
+				success: function(result) {
+					var msg = "This record doesn't exists";
+					if (result == "OK")
+						msg = "Record with Name " + $("#deleteSchool").val()
+									+ " successfully deleted.";
+					
+					alert(msg);
+				},
+				error:function(){
+				
+					var msg = "Error occured while submitting the form.	";
+					alert(msg);
+				}
+			});
+			
+	});
+	
 	</script>
 	</body>
 </html>
