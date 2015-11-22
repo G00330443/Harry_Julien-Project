@@ -6,12 +6,15 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<link href="/css/style.css" rel="stylesheet" type="text/css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-
+	
+<h1>Dublin SchoolLocation</h1>
+<br />
 	<p>There have Links to Check Primaryschool, Secondaryschool and schools</p>
 	<a href="http://127.0.0.1:3000/primary">primarySchool</a>&nbsp;
   <a href="http://127.0.0.1:3000/secondary">secondarySchool</a>&nbsp;
@@ -22,17 +25,19 @@
 				<div class="">
 					<h3>Display SchoolLocation</h3>
 					<p>school Name <input id="showName" type="text"></p>
-					<input id="showButton" class="btn btn-default btn-md" type="button" value="Show">
+					<input id="showButton" class="btn btn-primary" type="button" value="Show">
 				</div>
 			</div>
+			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
 		
 			<div class="container round-container align-right">
 				<div class="">
 					<h3>Delete SchoolLocation from db</h3>
 					<p>School Name <input id="deleteSchool" type="text"></p>
-					<input id="deleteButton" class="btn btn-default btn-md" type="button" value="Delete">
+					<input id="deleteButton" class="btn btn-primary" type="button" value="Delete">
 				</div>
 			</div>
+			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
 				</head>
 				
 				
@@ -88,7 +93,7 @@
 					
 					<div class="item">
 						<div class="haha"></div>
-						<div class="haha"><input id="postInsert" class="btn btn-default btn-md" type="button" value="Insert"></div>
+						<div class="haha"><input id="postInsert" class="btn btn-danger" type="button" value="Insert"></div>
 					</div>
 				</div>
 			</div>
@@ -141,14 +146,14 @@
 					
 					<div class="item">
 						<div class="haha"></div>
-						<div class="haha"><input id="putUpdate" class="btn btn-default btn-md" type="button" value="update"></div>
+						<div class="haha"><input id="putUpdate" class="btn btn-danger" type="button" value="update"></div>
 					</div>
 				</div>
 			</div>
 
 	
 	<div id="dialog" title="SchoolLocation">
-		<div id="dialog-text" class="align-left"></div>
+		<div id="dialog-text" class="align-center"></div>
 		</div>
 	</div>
 	<script type="text/javascript">
