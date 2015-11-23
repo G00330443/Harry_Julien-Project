@@ -56,7 +56,7 @@ __Semantic Web and Linked Data.__
 ## Example use of the API
 * Function to get primaryschool, secondaryschool and allschool Location in south Dublin.
 
-> Please enter Http://127.0.0.1:3000/primary or Http://127.0.0.1:3000/primary or  Http://127.0.0.1:3000/primary
+> Please enter Http://127.0.0.1:3000/primary or Http://127.0.0.1:3000/primary or  Http://127.0.0.1:3000/wholeschool
 
 > app.get('/primary',function(req,res))
 
