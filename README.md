@@ -66,6 +66,8 @@ __Semantic Web and Linked Data.__
 
 * Use School Name to search School Information
 
+>![image](https://github.com/G00330443/Harry_Julien-Project/blob/master/Images/%E6%8D%9511%E8%8E%B7.PNG)
+
 > Please enter Http://127.0.0.1:3000/wholeschool/Name/:Name
 
 > app.get('/wholeschool/Name/:Name',function(req,res))
