@@ -1,8 +1,19 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+.round-container {
+    border-radius: 25px;
+    border: 5px solid #2E64FE;
+    padding: 20px; 
+	width: 50%;
+}
+.align-left{
+	margin-top: 10px;
+	text-align:center;
+	float: left;
+	
+}
+.align-right{	
+	margin-top: 10px;
+	text-align:center;
+	float: right;
+	
 }
 
-a {
-  color: #00B7FF;
-}

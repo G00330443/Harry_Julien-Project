@@ -6,19 +6,53 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-	<link href="/css/style.css" rel="stylesheet" type="text/css">
+	<link href="/styleSheets/style.css" rel="stylesheet" type="text/css">
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
-	
-<h1>Dublin SchoolLocation</h1>
+<style>
+body {background: #E0F8F7}
+h1   {color:blue;
+		color:blue;
+		font-family:verdana;
+		font-size:300%;
+		}
+p    {color:green;
+		 color:red;
+		font-family:courier;
+		font-size:150%;
+}
+
+a  {
+		font-family:courier;
+		font-size:200%;
+}
+
+head {
+	text-algin:center
+}
+
+h3{
+	color:blue;
+		color:blue;
+		font-family:verdana;
+		font-size:200%;
+}
+</style>
+<div align="center">
+<h1 style="color:blue">Dublin SchoolLocation</h1>
 <br />
 	<p>There have Links to Check Primaryschool, Secondaryschool and schools</p>
-	<a href="http://127.0.0.1:3000/primary">primarySchool</a>&nbsp;
-  <a href="http://127.0.0.1:3000/secondary">secondarySchool</a>&nbsp;
+	<br />
+	<a href="http://127.0.0.1:3000/primary">primarySchool</a>&nbsp;&nbsp;&nbsp;&nbsp;
+  <a href="http://127.0.0.1:3000/secondary">secondarySchool</a>&nbsp;&nbsp;&nbsp;&nbsp&nbsp;
   <a href="http://127.0.0.1:3000/allschool">allSchool</a>
+		</div>		
+	
+
+	<body>
 	
 		<div class="container">
 			<div class="container round-container align-left">
@@ -28,7 +62,7 @@
 					<input id="showButton" class="btn btn-primary" type="button" value="Show">
 				</div>
 			</div>
-			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
+		
 		
 			<div class="container round-container align-right">
 				<div class="">
@@ -37,28 +71,22 @@
 					<input id="deleteButton" class="btn btn-primary" type="button" value="Delete">
 				</div>
 			</div>
-			<hr size="5" align="left" noshade width="30%" color="#58ACFA">
 				</head>
 				
-				
-				
-	
-	<body>
-			
-			<div class="container round-container align-left">
-				
-					<h3>Insert SchoolLocation into db</h3>
-				
-				<div class="container">				
 					
+				
+				<div class="container">		
+				
+					<div class="container round-container align-left">
+					<h3>Insert SchoolLocation into db</h3>	
 					<div class="item">
-						<div class="haha">Organisation</div>
-						<div class="haha"><input id="postorg" type="text" name="Organisation" value="null"></div>
+						<div class="div-inline">Organisation</div>
+						<div class="div-inline"><input id="postorg" type="text" name="Organisation" value="null"></div>
 					</div>
 					
 					<div class="item">
-						<div class="haha">Name</div>
-						<div class="haha"><input id="postname" type="text" name="Name" value="null"></div>
+						<div class="div-inline">Name</div>
+						<div class="div-inline"><input id="postname" type="text" name="Name" value="null"></div>
 					</div>
 					
 					<div class="item">
@@ -96,13 +124,16 @@
 						<div class="haha"><input id="postInsert" class="btn btn-danger" type="button" value="Insert"></div>
 					</div>
 				</div>
-			</div>
+		</div>
 			
-			<div class="container round-container align-right">
+			
 				
-					<h3>Update SchoolLocation in db</h3>
+					
 					
 					<div class="container">				
+					
+					<div class="container round-container align-left">
+					<h3>Update SchoolLocation in db</h3>
 					
 					<div class="item">
 						<div class="haha">Organisation</div>
@@ -149,7 +180,7 @@
 						<div class="haha"><input id="putUpdate" class="btn btn-danger" type="button" value="update"></div>
 					</div>
 				</div>
-			</div>
+</div>
 
 	
 	<div id="dialog" title="SchoolLocation">
@@ -165,7 +196,6 @@
 				type: 'POST',
 				data: 'Name=' + $("#showName").val(),
 				success: function(data) {
-				
 					var msg = "";
 					if (data == "Error"){
 						msg = "This record doesn't exists...";
@@ -204,9 +234,9 @@
 					+ '&ITMEast=' + $("#posteast").val()
 					+ '&ITMNorth=' + $("#postnorth").val()
 			,success: function(data) {
-				var msg = 	"<strong>The new school inserted.</strong><br/>school id:" + data._id + "<br/>"
+				var msg = 
 								
-								+ "Organisation : " + data.Organisation + "<br/>"
+								 "Organisation : " + data.Organisation + "<br/>"
 								+ "Name : " + data.Name + "<br/>"
 								+ " Address1 : " + data.Address1 + "<br/>"
 								+ "Address2 : " + data.Address2 + "<br/>"
@@ -225,7 +255,7 @@
 		$.ajax({
 			url: '/PUT',
 			type: 'PUT',
-			data: 	
+			data:
 					'Organisation=' + $("#putorg").val()
 					+ '&Name=' + $("#putname").val()
 					+ '&Address1=' + $("#putadd1").val()
@@ -235,8 +265,8 @@
 					+ '&ITMEast=' + $("#puteast").val()
 					+ '&ITMNorth=' + $("#putnorth").val()
 			,success: function(data) {
-					var msg = 	"<strong>Diamond with id =" + data.id + "</strong><br/>"
-									+ "Organisation : " + data.Organisation + "<br/>"
+					var msg = 
+								"Organisation : " + data.Organisation + "<br/>"
 								+ "Name : " + data.Name + "<br/>"
 								+ " Address1 : " + data.Address1 + "<br/>"
 								+ "Address2 : " + data.Address2 + "<br/>"
